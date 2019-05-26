@@ -1,0 +1,30 @@
+part_name = "natural gas bill calculation"
+
+# number of days for the months
+JANUARY = MARCH = MAY = JULY = AUGUST = OCTOBER = DECEMBER = January = March = May = July = Agust = October = December = january = march = may = july = agust = october = december = 31
+APRIL = JUNE = SEPTEMBER = NOVEMBER = April = June = September = November = april = june = september = november = 30
+FEBRUARY = February = february = 28
+
+# Price per cubic meter of natural gas, including taxes
+UnitPrice = 1.0502
+
+# How much user consumed natural gas per month?
+MonthlyConsumption = input ("Enter your monthly natural gas consumption in cubic meters: ")
+
+# Which month's bill the user wants to know?
+term = input ("""Which month would you like to calculate the bill? """)
+
+# We convert the data from the input () function to a format that # Python can understand
+Month = eval(term)
+
+# Daily natural gas consumption of the user
+DailyConsumption = int(MonthlyConsumption) / Month
+
+#bill amount
+bill = UnitPrice * DailyConsumption * Month
+
+dash = "-" * 20
+print (dash)
+print (part_name)
+print (dash)
+print ("Daily Consumption: \t" , DailyConsumption , " cubic meter \n" , "Estimated Bill Amount: \t" , bill , " TL" , sep="")
